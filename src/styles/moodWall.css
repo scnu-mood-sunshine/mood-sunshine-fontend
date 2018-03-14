@@ -61,7 +61,7 @@ ul{
 }
 
 .good-mood-box{
-    background: linear-gradient(left, #ff5454, #ff6969);
+    background: -webkit-linear-gradient(left, #ff5454, #ff6969);
     box-shadow: 0 10px 30px rgba(255, 85, 85, 0.4)
 }
 
