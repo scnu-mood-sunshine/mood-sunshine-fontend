@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import MoodList from './mood-wall.js'
+import NavigationBar from './navigation-bar.js'
 require('../styles/main-page.css')
 
 
@@ -21,6 +22,17 @@ function Article(props){
       </p>
       <p className="article-text">某天在一篇有争议的帖子里跟帖发表了一下看法。 没想到过了一会儿一个人回复了我言辞激烈地辱骂我。 我觉得又好气又好笑，就给他怼回去，没想到他用更难听的话继续骂我这时候我点进他的头像，想查看他的发贴记录，但是被上锁了，看不到历…
       </p>
+      <div className='article-imformation'>
+        <div>
+          <p>阅读数：</p><p>240</p>
+        </div>
+        <div>
+          <p>获得心情：</p><p>240</p>
+        </div>
+        <div>
+          <p>查看心情</p>
+        </div>
+      </div>
     </li>
     return(articleBox)
 }
@@ -28,18 +40,21 @@ function Article(props){
 class ArticleList extends Component {
   render() {
     return (
-      <div className='contain-box'>
-        <div id="article-list" className="articleList">
-          <ul className="articleList">
-            <Article />
-            <Article />
-            <Article />
-          </ul>
-        </div>
-        <div id="function-container" className="function-container">
-            <input type="button" className="button"/>
-            <input type="button" className="button right-button"/>
-            <MoodList />
+      <div>
+        <NavigationBar />
+        <div className='contain-box'>
+          <div id="article-list" className="articleList">
+            <ul className="articleList">
+              <Article />
+              <Article />
+              <Article />
+            </ul>
+          </div>
+          <div id="function-container" className="function-container">
+              <input type="button" className="button"/>
+              <input type="button" className="button right-button"/>
+              <MoodList />
+          </div>
         </div>
       </div>
     );
