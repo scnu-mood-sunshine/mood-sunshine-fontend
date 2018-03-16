@@ -4,7 +4,6 @@ let path = require('path');
 let webpack = require('webpack');
 let baseConfig = require('./base');
 let defaultSettings = require('./defaults');
-const autoprefixer = require('autoprefixer');
 
 // Add needed plugins here
 let BowerWebpackPlugin = require('bower-webpack-plugin');
