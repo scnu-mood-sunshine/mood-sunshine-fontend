@@ -21,7 +21,7 @@
   background-color: #fff;
   list-style-type: none;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(204,204,204,0.4);
+  box-shadow: 0 2px 10px rgba(204,204,204,0.2);
   box-sizing: border-box;
 }
 
@@ -41,7 +41,7 @@ ul{
   background-color: #fff;
   border: none;
   padding: 0;
-  box-shadow: 0 10px 30px rgba(204,204,204,0.4);
+  box-shadow: 0 2px 10px rgba(204,204,204,0.2);
   outline: none;
 }
 
