@@ -1,0 +1,23 @@
+.container{
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.head{
+    width: 300px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(204,204,204,0.2);
+    border-radius: 4px;
+    float: left;
+}
+
+.function-box{
+    width: 870px;
+    height: 600px;
+    margin-left: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(204,204,204,0.2);
+    border-radius: 4px;
+    float: left;
+}
