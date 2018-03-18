@@ -14,11 +14,13 @@ class UserPage extends React.Component{
                             <div>动态</div>
                             <div>文章</div>
                             <div>心情</div>
+                            <div>收藏夹</div>
+                            <div>关注的人</div>
                         </div>
-                        <hr className='hr'></hr>
+                        <hr className='long-hr'></hr>
                     </div>
                     <div className='user'>
-                        <div className='head'>
+                        <div className='head-container'>
                             <div className='head-picture-box'>
                             </div>
                             <div className='user-imformation-container'>

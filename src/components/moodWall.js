@@ -94,7 +94,7 @@ function addMood(){
 class MoodList extends Component {
     render(){
         return(
-            <div class="mood-wall" id="mood-wall">
+            <div className="mood-wall" id="mood-wall">
                 <p>本日心情</p>
                 <MoodBoxUIChange />
             </div>
