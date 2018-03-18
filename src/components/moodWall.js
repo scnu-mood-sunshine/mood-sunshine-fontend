@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-require('.styles/moodWall.css') ;
+require('../styles/moodWall.css') ;
 import ReactDOM from 'react-dom';
 
 var goodMoodWords = ['开心', '喜悦', '狂喜', '尽情', '快乐', '愉悦', '畅快',
@@ -95,8 +95,8 @@ class MoodList extends Component {
     render(){
         return(
             <div class="mood-wall" id="mood-wall">
-            <p>本日心情</p>
-              <MoodBoxUIChange />
+                <p>本日心情</p>
+                <MoodBoxUIChange />
             </div>
         )
     }
