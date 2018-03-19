@@ -1,0 +1,84 @@
+.mood-wall{
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.mood-wall > p{
+  font-size: 18px;
+  color: #333333;
+  margin: 0;
+  font-weight: normal;
+}
+
+.mood-wall{
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+ul{
+    padding: 0px;
+}
+
+.mood-box{
+    width:450px;
+    height: 120px;
+    border-radius: 10px;
+    list-style-type: none;
+    margin-top: 25px;
+    padding: 18px 25px;
+    box-sizing: border-box;
+}
+
+.null-mood-box{
+    display: inline-block;
+    width:300px;
+    height: 120px;
+    border-radius: 10px;
+    list-style-type: none;
+    margin-top: 25px;
+    padding: 18px 25px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 2px dashed #cccccc;
+    outline: none;
+    font-size: 24px;
+    font-family: sans-serif;
+    resize: none; 
+}
+
+.certain-button{
+    width: 125px;
+    height: 120px;
+    display: inline-block;
+    background-color: #6c6d75;
+    color: #ffffff;
+    margin-left: 25px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.good-mood-box{
+    background: -webkit-linear-gradient(left, #ff5454, #ff6969);
+    box-shadow: 0 10px 30px rgba(255, 85, 85, 0.4)
+}
+
+.normal-mood-box{
+    background: linear-gradient(left, #a097c0, #bfb2e2);
+    box-shadow: 0 10px 30px rgba(161, 150, 192, 0.4)
+}
+
+.bad-mood-box{
+    background: linear-gradient(left, #6c6d75, #90919a);
+    box-shadow: 0 10px 30px rgba(108, 110, 118, 0.4)
+}
+
+li > h1{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+}
