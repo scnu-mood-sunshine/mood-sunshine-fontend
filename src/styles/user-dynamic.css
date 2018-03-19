@@ -1,0 +1,43 @@
+.dynamic-box{
+    width: 670px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.img-box{
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    background-color: #ccc;
+}
+
+.text-container{
+    width: 460px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    box-sizing: border-box;
+}
+
+.text{
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.read-full-option{
+    margin-top: 10px;
+    color: #888;
+    display: inline-block;
+}
+
+.time-box{
+    float: right;
+}
+
+.hr{
+    border-style: none;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #eee;
+}
