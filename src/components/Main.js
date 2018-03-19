@@ -7,11 +7,14 @@ import Login from './login-page.js'
 import MoodWall from './mood-wall.js'
 import ArticleReading from './article-reading-page.js'
 import Test from './test'
+import NavigationBar from './navigation-bar.js'
+
+let yeomanImage = require('../images/yeoman.png');
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <ArticleReading />
+      <NavigationBar />
     );
   }
 }
