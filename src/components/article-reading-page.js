@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 require('../styles/article-reading-page.css')
 import MoodWall from './mood-wall.js'
 

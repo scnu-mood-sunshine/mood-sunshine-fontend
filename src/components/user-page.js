@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from './navigation-bar.js'
-import MoodList from './moodWall.js'
+import MoodList from './mood-wall'
 require('../styles/user-page.css')
 
 class UserPage extends React.Component{
