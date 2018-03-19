@@ -62,17 +62,17 @@ ul{
 
 .good-mood-box{
     background: -webkit-linear-gradient(left, #ff5454, #ff6969);
-    box-shadow: 0 10px 30px rgba(255, 85, 85, 0.4)
+    box-shadow: 0 5px 15px rgba(255, 85, 85, 0.4)
 }
 
 .normal-mood-box{
     background: linear-gradient(left, #a097c0, #bfb2e2);
-    box-shadow: 0 10px 30px rgba(161, 150, 192, 0.4)
+    box-shadow: 0 5px 15px rgba(161, 150, 192, 0.4)
 }
 
 .bad-mood-box{
     background: linear-gradient(left, #6c6d75, #90919a);
-    box-shadow: 0 10px 30px rgba(108, 110, 118, 0.4)
+    box-shadow: 0 5px 15px rgba(108, 110, 118, 0.4)
 }
 
 li > h1{
