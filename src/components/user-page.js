@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationBar from './navigation-bar.js'
 import MoodList from './mood-wall'
 import UserDynamic from './user-dynamic.js'
+import UserArticle from './user-article.js'
 require('../styles/user-page.css')
 
 class UserPage extends React.Component{
@@ -19,7 +20,7 @@ class UserPage extends React.Component{
                             <div>关注的人</div>
                         </div>
                         <hr className='long-hr'></hr>
-                        <UserDynamic />
+                        <UserArticle />
                     </div>
                     <div className='user'>
                         <div className='head-container'>

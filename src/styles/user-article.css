@@ -1,0 +1,44 @@
+.user-article-box{
+    width: 670px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.user-article-title{
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.article-text-container{
+    width: 100%;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.article-text{
+    color: #1a1a1a;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.read-full-option{
+    margin-top: 10px;
+    color: #888;
+    display: inline-block;
+}
+
+.article-time-box{
+    color: #888;
+    float: right;
+    vertical-align: top;
+}
+
+.hr{
+    border-style: none;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #eee;
+}
