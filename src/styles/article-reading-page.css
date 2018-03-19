@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.contain-box{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.article{
+    width: 700px;
+    padding: 30px;
+    background-color: #fff;
+    margin: 30px 0;
+    box-sizing: border-box;
+    float: left;
+    box-shadow: 0 10px 30px rgba(204,204,204,0.4);
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+}
+
+.long-hr{
+    width: 500px;
+    height: 1px;
+    background-color: #eeeeee;
+    border: none;
+}
+
+.short-hr{
+    width: 440px;
+    height: 1px;
+    background-color: #eeeeee;
+    border: none;
+    margin: 0 auto;
+}
+
+.title{
+    font-size: 22px;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.text{
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 2;
+    word-break: break-all;
+}
+
+.imformation-container{
+    width: 460px;
+    float: right;
+}
+
+.author-imformation-container{
+    width: 500px;
+    height: 300px;
+    margin: 30px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(204,204,204,0.4);
+}
+
+.author-headpicture{
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #000;
+    float: left;
+}
+
+.little-title{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2;
+    padding: 15px 30px;
+}
+
+.author-imformation-box{
+    height: 100px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+.author-name-box{
+    float: left;
+}
+
+.user-link{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.user-description{
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.follow-button{
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    background-color: #ffae46;
+    float: right;
+}
+
+.author-article-mood-followers{
+    width: 500px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+
+.article-number-box{
+    width: 144px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.article-text{
+    font-size: 15px;
+    line-height: 2;
+    color: #aaa;
+}
+
+.article-number{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 10px;
+}
