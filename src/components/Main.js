@@ -8,13 +8,14 @@ import MoodWall from './mood-wall.js'
 import ArticleReading from './article-reading-page.js'
 import Test from './test'
 import NavigationBar from './navigation-bar.js'
+import UserPage from './user-page.js'
 
 let yeomanImage = require('../images/yeoman.png');
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <NavigationBar />
+      <UserPage />
     );
   }
 }
