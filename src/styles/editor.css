@@ -1,0 +1,16 @@
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.editor-wrap {
+  position: relative;
+  height: auto;
+  margin-top: 50px;
+  padding: 5px;
+  overflow: hidden;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: initial;
+}
