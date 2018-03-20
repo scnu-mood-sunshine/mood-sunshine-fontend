@@ -9,14 +9,17 @@ import ArticleReading from './article-reading-page.js'
 import Test from './test'
 import NavigationBar from './navigation-bar.js'
 import UserPage from './user-page.js'
+// 引入编辑器以及编辑器样式
+import Editor from './editor'
 
-let yeomanImage = require('../images/yeoman.png');
 
 class AppComponent extends React.Component {
+
   render() {
+  
     return (
-      <UserPage />
-    );
+      <Editor/>
+    )
   }
 }
 
