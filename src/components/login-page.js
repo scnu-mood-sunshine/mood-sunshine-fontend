@@ -7,9 +7,9 @@ class Login extends Component{
         return(
             <div>
                 <div className='web-description'>
-                    <div className='title'>心晴</div>
+                    <div className='big-title'>心晴</div>
                     <div className='small-title'>Mood note</div>
-                    <div className='text'>愿您每一天都有好心情</div>
+                    <div className='login-text'>愿您每一天都有好心情</div>
                 </div>
                 <div className="login-relogin-box">
                     <div className='login-box'>
