@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import MonthMood from './month-mood'
 require('../styles/calendar.css')
 
 class CalendarHeader extends React.Component{
@@ -145,6 +146,7 @@ class CalendarControl extends React.Component{
                 year = {this.state.year}
                 month = {this.state.month}
                 day = {this.state.day}/>
+                <MonthMood />
             </div>
         )
     }
