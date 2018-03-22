@@ -1,32 +1,45 @@
 .headerborder{
     width: 670px;
     background-color: #fff;
-    height: 40px;
-    text-align: center;
+    height: 50px;
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 0 20px;
+    color: #333;
+}
+
+.headerborder-hr{
+    width: 670px;
+    height: 1px;
+    border-style: none;
+    background-color: #eee;
+    margin: 0;
 }
 
 .headerborder > p{
     display: inline-block;
-    line-height: 40px;
+    line-height: 50px;
     margin: 0 20px;
+    vertical-align: top;
 }
 
-.headerborder > div{
+.triangle-left,.triangle-right{
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    background-color: #888;
-    margin-top: 10px;
+    background-color: #eee;
+    margin-top: 15px;
+    cursor: pointer;
+    display: inline-block;
 }
 
-.triangle-left{
-    float: left;
-}
-
-.triangle-right{
+.month-mood{
     float: right;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.weekday > ul, .calendarDay > ul{
+    padding-bottom: 0;
 }
 
 .weekday{
@@ -35,28 +48,60 @@
     height: 40px;
     padding: 0 17.5px;
     box-sizing: border-box;
+    color: #ff6969;
 }
 
 .weekday>ul>li{
     display: inline-block;
+    vertical-align: top;
     width: 90px;
     line-height: 40px;
     text-align: center;
 }
 
-.CalendarDay{
+.calendarDay{
     width: 670px;
     background-color: #fff;
-    padding: 0 17.5px;
+    padding: 0 17.5px 20px 17.5px;
     box-sizing: border-box;
+    color: #333;
 }
 
-.CalendarDay>ul>li{
+.calendarDay>ul>li{
     display: inline-block;
+    vertical-align: top;
     width: 90px;
     height: 90px;
     text-align: center;
     cursor: pointer;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 20px 0 10px 0;
+}
+
+.calendarDay>ul>li:hover{
+    background-color: #f5f5f5;
+}
+
+.mood-point-box{
+
+}
+
+.mood-point-box > div{
+    width: 8px;
+    height: 8px;
+    margin: 15px 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.good-mood-point{
+    background-color: #ff5454;
+}
+
+.normal-mood-point{
+    background-color: #a097c0;
+}
+
+.bad-mood-point{
+    background-color: #6c6d75;
 }

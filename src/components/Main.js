@@ -11,7 +11,6 @@ import NavigationBar from './navigation-bar.js'
 import UserPage from './user-page.js'
 // 引入编辑器以及编辑器样式
 import Editor from './editor'
-import CalendarControl from './calendar-antd.js'
 
 
 class AppComponent extends React.Component {
@@ -19,7 +18,7 @@ class AppComponent extends React.Component {
   render() {
   
     return (
-      <CalendarControl />
+      <UserPage />
     )
   }
 }

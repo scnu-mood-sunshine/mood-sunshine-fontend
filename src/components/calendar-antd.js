@@ -2,23 +2,32 @@ import React from 'react'
 import moment from 'moment'
 require('../styles/calendar.css')
 
-var CalendarHeader = React.createClass({
-    handleLeftClick:function(){
-        var newMonth = parseInt(this.state.month) - 1;
-        var year = this.state.year;
+class CalendarHeader extends React.Component{
+    constructor(props) {
+        super(props)
+        this.handleLeftClick = this.handleLeftClick.bind(this)
+        this.handleRightClick = this.handleRightClick.bind(this)
+    }
+    state = {
+        year: this.props.year,
+        month: this.props.month
+    }
+    handleLeftClick(){
+        console.log(this.props)
+        let newMonth = parseInt(this.state.month) - 1;
+        let year = this.state.year;
         if(newMonth < 1){
             year --;
             newMonth = 12;
         }
-        alert('year')
         this.state.month = newMonth;
         this.state.year=year;
         this.setState(this.state);
         this.props.updateFilter(year,newMonth);
-    },
-    handleRightClick:function(){
-        var newMonth = parseInt(this.state.month) + 1;
-        var year = this.state.year;
+    }
+    handleRightClick(){
+        let newMonth = parseInt(this.state.month) + 1;
+        let year = this.state.year;
         if( newMonth > 12 ){
             year ++;
             newMonth = 1;
@@ -27,83 +36,104 @@ var CalendarHeader = React.createClass({
         this.state.year=year;
         this.setState(this.state);
         this.props.updateFilter(year,newMonth);
-    },
-    render:function(){
+    }
+    render(){
         return(
-            <div className="headerborder">
-                <p>年</p>
-                <p>月</p>
-                <div className="triangle-left" onClick={this.handleLeftClick}> </div>
-                <div className="triangle-right" onClick={this.handleRightClick}> </div>
+            <div>
+                <div className="headerborder">
+                    <div className="triangle-left" onClick={this.handleLeftClick}> </div>
+                    <p>{this.state.year}年</p>
+                    <p>{this.state.month}月</p>
+                    <div className="triangle-right" onClick={this.handleRightClick}> </div>
+                    <div className='month-mood'>本月心情统计</div>
+                </div>
+                <hr className='headerborder-hr'></hr>
             </div>
         )
     }
-});
-var CalendarBody = React.createClass({
-    getMonthDays:function(){
+}
+class CalendarBody extends React.Component{
+    constructor(props) {
+        super(props)
+        this.getMonthDays = this.getMonthDays.bind(this)
+        this.getFirstDayWeek = this.getFirstDayWeek.bind(this)
+    }
+    getMonthDays(){
         //根据月份获取当前天数
-        var year = this.props.year,
+        let year = this.props.year,
             month = this.props.month;
-        var temp = new Date(year,month,0);
+        let temp = new Date(year,month,0);
         return temp.getDate();
-    },
-    getFirstDayWeek:function(){
+    }
+    getFirstDayWeek(){
                 //根据年月返回当月1号是星期几
-        var year = this.props.year,
+        let year = this.props.year,
             month = this.props.month;
 
-        var dt = new Date(year+'/'+month+'/1');//new Date(year,month,1);
-        var Weekdays = dt.getDay();
+        let dt = new Date(year+'/'+month+'/1');//new Date(year,month,1);
+        let Weekdays = dt.getDay();
     
         return Weekdays;
-    },
-    render:function(){
-        var arry1 =[],arry2 = [];
-        var getDays = this.getMonthDays(),
+    }
+    render(){
+        let node1 = [];
+        let node2 = [];
+        let getDays = this.getMonthDays(),
             FirstDayWeek = this.getFirstDayWeek(),
             day = this.props.day ;
-            for(var i = 0 ;i < FirstDayWeek; i++ ){
-                arry1[i] = i;
+        let moodPoint = <div className='mood-point-box'>
+                            <div className='good-mood-point'></div>
+                            <div className='normal-mood-point'></div>
+                            <div className='bad-mood-point'></div>
+                        </div>
+            for(let i = 1 ;i <= FirstDayWeek; i++ ){
+                node1.push(<li key={i}></li>)
             }
-            for(var i = 0 ;i < getDays; i++ ){
-                arry2[i] = (i+1);
+            for(let i = 1 ;i <= getDays; i++ ){
+
+                if (day === i) {
+                    node2.push(<li key={i+node1.length}><div>{i}</div>{moodPoint}</li>)
+                } else {
+                    node2.push(<li key={i+node1.length}><div>{i}</div>{moodPoint}</li>)
+                }
             }
-            var node1 = arry1.map(function(item){return <li></li>})
-			var node2 = arry2.map(function(item){return (day == item)?<li >{item}</li>: <li>{item}</li>})
         return(
             <div>
                 <div className="weekday">
                     <ul>
-                        <li>SUN</li>
-                        <li>MON</li>
-                        <li>TUE</li>
-                        <li>WED</li>
-                        <li>THU</li>
-                        <li>FRI</li>
-                        <li>SAT</li>
+                        <li key={1}>SUN</li>
+                        <li key={2}>MON</li>
+                        <li key={3}>TUE</li>
+                        <li key={4}>WED</li>
+                        <li key={5}>THU</li>
+                        <li key={6}>FRI</li>
+                        <li key={7}>SAT</li>
                     </ul>
                 </div>
-                <div className="CalendarDay">
+                <div className="calendarDay">
                     <ul>{node1}{node2}</ul>
                 </div>
             </div>
         )
     }
-});
+}
 
-var CalendarControl = React.createClass({
-    getInitialState(){
-        return{
-            year:moment().format('YYYY'),
-            month:moment().format('MM')
-        }
-    },
+class CalendarControl extends React.Component{
+    constructor(props) {
+        super(props)
+        this.handleFilterUpdate = this.handleFilterUpdate.bind(this)
+    }
+    state = {
+        year: moment().format('YYYY'),
+        month: moment().format('MM')
+    }
+
     handleFilterUpdate(filterYear,filterMonth) {
         this.setState({
-        year: filterYear,
-        month: filterMonth
+            year: filterYear,
+            month: filterMonth
         });
-    },
+    }
     render(){
         return(
             <div>
@@ -118,6 +148,6 @@ var CalendarControl = React.createClass({
             </div>
         )
     }
-})
+}
 
 export default CalendarControl
