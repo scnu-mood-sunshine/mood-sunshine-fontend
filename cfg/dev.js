@@ -33,7 +33,8 @@ config.module.loaders.push({
   include: [].concat(
     config.additionalPaths,
     [ path.join(__dirname, '/../src') ]
-  )
+  ),
+  server: '192.168.1.10:8424'
 });
 
 module.exports = config;

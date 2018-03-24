@@ -18,7 +18,7 @@ class AppComponent extends React.Component {
   render() {
     
     return (
-      <UserPage />
+      <ArticleReading />
     )
   }
 }

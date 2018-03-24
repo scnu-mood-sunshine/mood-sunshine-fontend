@@ -64,5 +64,12 @@ module.exports = {
   srcPath: srcPath,
   publicPath: '/assets/',
   port: dfltPort,
-  getDefaultModules: getDefaultModules
+  getDefaultModules: getDefaultModules,
+  externals: {
+    'Config': JSON.stringify(process.env.ENV === 'dist' ? {
+      server: 'http://192.168.1.10:8426'
+    } : {
+      server: 'http://192.168.1.10:8424'
+    })
+  }
 };
