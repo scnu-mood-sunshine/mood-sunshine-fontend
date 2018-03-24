@@ -1,6 +1,7 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
+import axios from 'axios'
 require('../styles/editor.css')
 
 class Editor extends React.Component {
@@ -17,6 +18,16 @@ class Editor extends React.Component {
     console.log(rawContent)
   }
 
+  uploadFn = (param) => {
+    if (param.file.size > 5192000) {
+      param.error({
+        msg: '图片太大了噢，给个小于5M的图片好吧'
+      })
+    }
+    const formData = new FormData()
+    formData.append('file', param.file)
+    formData.append('type', param.file.type)
+  }
 
   render() {
 
@@ -28,6 +39,18 @@ class Editor extends React.Component {
       onChange: this.handleChange,
       onRawChange: this.handleRawChange,
       viewWrapper: '.demo',
+      media: {
+        allowPasteImage: true, // 是否允许直接粘贴剪贴板图片（例如QQ截图等）到编辑器
+        image: true, // 开启图片插入功能
+        video: false, // 关闭视频插入功能
+        audio: false, // 关闭音频插入功能
+        validateFn: this.validateFn, // 指定本地校验函数
+        uploadFn: this.uploadFn, // 指定上传函数
+        removeConfirmFn: null, // 指定删除前的确认函数，说明见下文
+        onRemove: null, // 指定媒体库文件被删除时的回调，参数为被删除的媒体文件列表(数组)
+        onChange: null, // 指定媒体库文件列表发生变化时的回调，参数为媒体库文件列表(数组)
+        onInsert: null // 指定从媒体库插入文件到编辑器时的回调，参数为被插入的媒体文件列表(数组)
+      },
       // 增加自定义预览按钮
       extendControls: [
         {
@@ -39,29 +62,6 @@ class Editor extends React.Component {
           className: 'preview-button',
           onClick: () => {
             window.open().document.write(this.state.htmlContent)
-          }
-        }, {
-          type: 'dropdown',
-          text: <span>下拉菜单</span>,
-          component: <h1 style={{width: 200, color: '#ffffff', padding: 10, margin: 0}}>Hello World!</h1>
-        }, {
-          type: 'modal',
-          text: <span style={{paddingRight: 10,paddingLeft: 10}}>弹出菜单</span>,
-          className: 'modal-button',
-          modal: {
-            title: '这是一个弹出框',
-            showClose: true,
-            showCancel: true,
-            showConfirm: true,
-            confirmable: true,
-            onConfirm: () => console.log(1),
-            onCancel: () => console.log(2),
-            onClose: () => console.log(3),
-            children: (
-              <div style={{width: 480, height: 320, padding: 30}}>
-                <span>Hello World！</span>
-              </div>
-            )
           }
         }
       ]
@@ -81,7 +81,6 @@ class Editor extends React.Component {
 
   handleHTMLChange = (htmlContent) => {
     this.setState({ htmlContent })
-    console.log(this.state.htmlContent)
   }
 
 }

@@ -16,7 +16,7 @@ import Editor from './editor'
 class AppComponent extends React.Component {
 
   render() {
-  
+    
     return (
       <Editor/>
     )
