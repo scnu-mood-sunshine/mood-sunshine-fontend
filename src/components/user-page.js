@@ -7,6 +7,14 @@ import CalendarControl from './calendar-antd.js'
 require('../styles/user-page.css')
 
 class UserPage extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            userName : null,
+            avata : null,
+            description : null
+        }
+    }
     render() {
         return (
             <div>
