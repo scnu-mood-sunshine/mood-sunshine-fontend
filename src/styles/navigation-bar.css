@@ -15,8 +15,9 @@
 a {
     line-height: 54px;
     margin: 0 20px;
+    cursor: pointer;
 }
 
 .right-icon{
     float: right;
-}
+} 

@@ -1,5 +1,6 @@
 import React from 'react'
 import BraftEditor from 'braft-editor'
+import NavigationBar from './navigation-bar'
 import 'braft-editor/dist/braft.css'
 import axios from 'axios'
 require('../styles/editor.css')
@@ -68,10 +69,14 @@ class Editor extends React.Component {
     }
 
     return (
-      <div className="container">
-        <div className="editor-wrap" id="editor-root">
-          <div className="demo" width="888px">
-            <BraftEditor {...editorProps} />
+      <div>
+        <NavigationBar />
+        <div className="editor-container">
+          <input type="text" placeholder="文章标题..." className="title-input"/>
+          <div className="editor-wrap" id="editor-root">
+            <div className="demo" width="888px">
+              <BraftEditor {...editorProps} />
+            </div>
           </div>
         </div>
       </div>
