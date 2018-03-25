@@ -11,13 +11,13 @@ class Editor extends React.Component {
     htmlContent: ''
   }
 
-  handleChange = (content) => {
-    console.log(content)
-  }
+  // handleChange = (content) => {
+  //   console.log(content)
+  // }
 
-  handleRawChange = (rawContent) => {
-    console.log(rawContent)
-  }
+  // handleRawChange = (rawContent) => {
+  //   console.log(rawContent)
+  // }
 
   uploadFn = (param) => {
     if (param.file.size > 5192000) {

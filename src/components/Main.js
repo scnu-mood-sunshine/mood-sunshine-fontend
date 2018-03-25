@@ -1,29 +1,16 @@
-//require('normalize.css/normalize.css');
-require('styles/App.css');
+'use strict'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App'
 
-import React from 'react';
-import ArticleList from './main-page.js'
-import Login from './login-page.js'
-import MoodWall from './mood-wall.js'
-import ArticleReading from './article-reading-page.js'
-import Test from './test'
-import NavigationBar from './navigation-bar.js'
-import UserPage from './user-page.js'
-// 引入编辑器以及编辑器样式
-import Editor from './editor'
-
-
-class AppComponent extends React.Component {
-
+class MainComponent extends React.Component{
   render() {
-    
     return (
-      <ArticleReading />
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
     )
   }
 }
 
-AppComponent.defaultProps = {
-};
-
-export default AppComponent;
+export default MainComponent;

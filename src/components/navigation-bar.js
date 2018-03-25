@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 require('../styles/navigation-bar.css')
 
 class NavigationBar extends Component{
@@ -6,10 +7,10 @@ class NavigationBar extends Component{
         return (
             <div className='nav-bar'>
                 <div className='nav-bar-container'>
-                    <a>心晴</a>
-                    <a className='right-icon'>个人</a>
-                    <a className='right-icon'>动态</a>
-                    <a className='right-icon'>消息</a>
+                    <li><Link to={{pathname: '/'}}>心晴</Link></li>
+                    <li className='right-icon'><Link to={{pathname: '/userinfo'}}>个人</Link></li>
+                    <li className='right-icon'><Link to={{pathname: '/'}}>动态</Link></li>
+                    <li className='right-icon'><Link to={{pathname: '/'}}>消息</Link></li>
                 </div>
             </div>
         )

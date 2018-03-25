@@ -21,15 +21,11 @@ class ArticleReading extends Component{
     componentDidMount() {
         axios.get('http://192.168.1.10:8424' + '/api/v1/posts/' + '5aaf84ff0381024a3e557102')
             .then(res => {
-                console.log(res)
                 const data = res.data.data
                 this.setState({
                     title: data.title,
                     text: data.content
                 })
-            })
-            .catch(error => {
-                console.log(error)
             })
     }
 
