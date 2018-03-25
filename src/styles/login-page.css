@@ -60,7 +60,6 @@
 .login-form-box{
     text-align: center;
     padding: 30px 20px;
-    display: none;
 }
 
 .relogin-form-box > input, .login-form-box > input{
