@@ -1,5 +1,4 @@
 import React from 'react'
-import moment from 'moment'
 require('../styles/month-mood.css')
 
 class RecordMood extends React.Component{
