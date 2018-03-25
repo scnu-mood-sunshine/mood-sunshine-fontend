@@ -13,20 +13,27 @@ class RecordMood extends React.Component{
             badTextColor : '#90919a'
         }
     }
+    componentDidMount(){
+        this.setState({
+            goodDivWidth : 500,
+            normalDivWidth : 100,
+            badDivWidth : 50
+        })
+    }
     render(){
         return(
             <div>
-                <div className='progress-container'>
+                <div className={'progress-container'}>
                     <div className='mood-record-progress good' style={{width:this.state.goodDivWidth}}></div>
-                    <p style={{color:this.state.goodTextColor}}>250</p>
+                    <p style={{color:this.state.goodTextColor}}>{this.state.goodDivWidth}</p>
                 </div>
                 <div className='progress-container'>
                     <div className='mood-record-progress normal' style={{width:this.state.normalDivWidth}}></div>
-                    <p style={{color:this.state.normalTextColor}}>450</p>
+                    <p style={{color:this.state.normalTextColor}}>{this.state.normalDivWidth}</p>
                 </div>
                 <div className='progress-container'>
                     <div className='mood-record-progress bad' style={{width:this.state.badDivWidth}}></div>
-                    <p style={{color:this.state.badTextColor}}>350</p>
+                    <p style={{color:this.state.badTextColor}}>{this.state.badDivWidth}</p>
                 </div>
             </div>
         )
