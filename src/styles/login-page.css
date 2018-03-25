@@ -3,10 +3,15 @@
     margin: 0;
 }
 
+.login-container{
+    width: 1400px;
+    margin: 0 auto;
+}
+
 .web-description{
     width: 600px;
+    margin-top: 180px;
     text-align: right;
-    margin: 200px 0 0 150px;
     float: left;
 }
 
@@ -30,7 +35,7 @@
 
 .login-relogin-box{
     width: 600px;
-    margin: 150px;
+    margin: 150px 0 0 120px;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -55,6 +60,7 @@
     color: #999999;
     display: inline-block;
     padding: 30px;
+    cursor: pointer;
 }
 
 .login-form-box{
@@ -65,11 +71,13 @@
 .relogin-form-box > input, .login-form-box > input{
     width: 300px;
     height: 50px;
+    box-sizing: border-box;
+    padding: 0 10px;
     margin-bottom: 20px;
     border-radius: 4px;
     border: 1px solid #c8c8c8;
     background-color: #eee;
-    font-size: 14px;
+    font-size: 18px;
     color: #888;
 }
 
