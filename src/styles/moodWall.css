@@ -1,8 +1,3 @@
-.mood-wall{
-  padding: 25px;
-  box-sizing: border-box;
-}
-
 .mood-wall > p{
   font-size: 18px;
   color: #333333;
@@ -11,6 +6,8 @@
 }
 
 .mood-wall{
+  padding: 25px 25px 40px 25px;
+  box-sizing: border-box;
   width: 500px;
   height: 100%;
   border-radius: 6px;

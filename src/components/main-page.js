@@ -20,7 +20,7 @@ function Article(props){
       <p className="article-title">
       有哪些令人拍案叫绝的推理桥段？
       </p>
-      <p className="article-text">某天在一篇有争议的帖子里跟帖发表了一下看法。 没想到过了一会儿一个人回复了我言辞激烈地辱骂我。 我觉得又好气又好笑，就给他怼回去，没想到他用更难听的话继续骂我这时候我点进他的头像，想查看他的发贴记录，但是被上锁了，看不到历…
+      <p className="main-page-article-text">某天在一篇有争议的帖子里跟帖发表了一下看法。 没想到过了一会儿一个人回复了我言辞激烈地辱骂我。 我觉得又好气又好笑，就给他怼回去，没想到他用更难听的话继续骂我这时候我点进他的头像，想查看他的发贴记录，但是被上锁了，看不到历…
       </p>
       <div className='article-imformation'>
         <div>

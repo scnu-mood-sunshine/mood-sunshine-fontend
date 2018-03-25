@@ -61,7 +61,7 @@ class Login extends Component{
             return <Redirect to='/'/>
         } else {
             return(
-                <div>
+                <div className='login-container'>
                     <div className='web-description'>
                         <div className='big-title'>心晴</div>
                         <div className='small-title'>Mood note</div>
