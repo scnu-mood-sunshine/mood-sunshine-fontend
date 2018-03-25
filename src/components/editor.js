@@ -2,7 +2,7 @@ import React from 'react'
 import BraftEditor from 'braft-editor'
 import NavigationBar from './navigation-bar'
 import 'braft-editor/dist/braft.css'
-import axios from 'axios'
+// import axios from 'axios'
 require('../styles/editor.css')
 
 class Editor extends React.Component {

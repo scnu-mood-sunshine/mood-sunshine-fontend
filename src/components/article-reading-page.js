@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 require('../styles/article-reading-page.css')
 import MoodWall from './mood-wall.js'
-import axios from 'axios'
+import axios from '../bin/axios'
 
 class ArticleReading extends Component{
     constructor (props) {
@@ -19,7 +19,7 @@ class ArticleReading extends Component{
         };
     }
     componentDidMount() {
-        axios.get('http://192.168.1.10:8424' + '/api/v1/posts/' + '5aaf84ff0381024a3e557102')
+        axios.get('/api/v1/posts/' + '5aaf84ff0381024a3e557102')
             .then(res => {
                 const data = res.data.data
                 this.setState({

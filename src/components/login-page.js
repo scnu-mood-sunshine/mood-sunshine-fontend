@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom'
-import Axios from 'axios';
+import { Redirect } from 'react-router-dom'
+// import Axios from 'axios';
 require('../styles/login-page.css');
 //import registerServiceWorker from './registerServiceWorker';
 class Login extends Component{

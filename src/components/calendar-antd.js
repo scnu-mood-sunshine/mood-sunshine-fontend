@@ -14,7 +14,6 @@ class CalendarHeader extends React.Component{
         month: this.props.month
     }
     handleLeftClick(){
-        console.log(this.props)
         let newMonth = parseInt(this.state.month) - 1;
         let year = this.state.year;
         if(newMonth < 1){
