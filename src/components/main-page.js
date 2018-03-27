@@ -42,7 +42,7 @@ class MainPage extends Component {
         <NavigationBar />
         <div className="contain-box">
           <div id="article-list" className="articleList">
-            <ul className="articleList">
+            <ul>
               {articleLists}
             </ul>
           </div>

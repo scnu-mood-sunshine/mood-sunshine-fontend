@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationBar from './navigation-bar.js'
 import MoodList from './mood-wall'
 import UserDynamic from './user-dynamic.js'
-// import UserArticle from './user-article.js'
+import UserArticle from './user-article.js'
 import CalendarControl from './calendar-antd.js'
 // import ArticleIntroduction from './article-introduction'
 require('../styles/user-page.css')
@@ -14,14 +14,28 @@ class UserPage extends React.Component{
             userName : null,
             avata : null,
             description : null,
-            subComponent: null
+            subComponent: <UserDynamic/>
         }
         this.handleClickDynamic = this.handleClickDynamic.bind(this)
+        this.handleClickArticle = this.handleClickArticle.bind(this)
+        this.handleClickCalendarControl = this.handleClickCalendarControl.bind(this)
     }
 
     handleClickDynamic () {
         this.setState({
             subComponent: <UserDynamic/>
+        })
+    }
+
+    handleClickArticle () {
+        this.setState({
+            subComponent: <UserArticle/>
+        })
+    }
+
+    handleClickCalendarControl () {
+        this.setState({
+            subComponent: <CalendarControl/>
         })
     }
 
@@ -32,9 +46,9 @@ class UserPage extends React.Component{
                 <div className='container'>
                     <div className='function-box'>
                         <div className='function-option-container'>
-                            <div>动态</div>
-                            <div>文章</div>
-                            <div>心情</div>
+                            <div onClick={this.handleClickDynamic}>动态</div>
+                            <div onClick={this.handleClickArticle}>文章</div>
+                            <div onClick={this.handleClickCalendarControl}>心情</div>
                             <div>收藏夹</div>
                             <div>关注的人</div>
                         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+require('../styles/article-introduction.css')
 
 class ArticleIntroduction extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ArticleIntroduction extends Component {
         </div>
         <hr/>
         <p className="article-title">{this.props.title}</p>
-        <p className="article-text">{this.props.introduction}</p>
+        <p className="main-page-article-text">{this.props.introduction}</p>
         <div className='article-imformation'>
           <div>
             <p>阅读数：</p><p>{this.props.views}</p>
