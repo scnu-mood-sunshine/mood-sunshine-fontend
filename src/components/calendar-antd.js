@@ -8,10 +8,11 @@ class CalendarHeader extends React.Component{
         super(props)
         this.handleLeftClick = this.handleLeftClick.bind(this)
         this.handleRightClick = this.handleRightClick.bind(this)
-    }
-    state = {
-        year: this.props.year,
-        month: this.props.month
+        this.handleMoodCount = this.handleMoodCount.bind(this)
+        this.state = {
+            year: this.props.year,
+            month: this.props.month
+        }
     }
     handleLeftClick(){
         let newMonth = parseInt(this.state.month) - 1;
@@ -37,6 +38,9 @@ class CalendarHeader extends React.Component{
         this.setState(this.state);
         this.props.updateFilter(year,newMonth);
     }
+    handleMoodCount() {
+        this.props.changeShowCalendar()
+    }
     render(){
         return(
             <div>
@@ -45,7 +49,7 @@ class CalendarHeader extends React.Component{
                     <p>{this.state.year}年</p>
                     <p>{this.state.month}月</p>
                     <div className="triangle-right" onClick={this.handleRightClick}> </div>
-                    <div className='month-mood'>本月心情统计</div>
+                    <div className='month-mood' onClick={this.handleMoodCount}>本月心情统计</div>
                 </div>
                 <hr className='headerborder-hr'></hr>
             </div>
@@ -121,11 +125,12 @@ class CalendarBody extends React.Component{
 class CalendarControl extends React.Component{
     constructor(props) {
         super(props)
+        this.state = {
+            year: moment().format('YYYY'),
+            month: moment().format('MM'),
+            showCalendar: true
+        }
         this.handleFilterUpdate = this.handleFilterUpdate.bind(this)
-    }
-    state = {
-        year: moment().format('YYYY'),
-        month: moment().format('MM')
     }
 
     handleFilterUpdate(filterYear,filterMonth) {
@@ -134,18 +139,34 @@ class CalendarControl extends React.Component{
             month: filterMonth
         });
     }
+
+    changeShowCalendar() {
+        return function () {
+            const showCalendar = this.state.showCalendar
+            this.setState({
+                showCalendar: !showCalendar
+            })
+        }
+    }
+
     render(){
+        let subCalendar = null
+        if (this.state.showCalendar) {
+            subCalendar = <CalendarBody
+                year = {this.state.year}
+                month = {this.state.month}
+                day = {this.state.day}/>
+        } else {
+            subCalendar = <MonthMood/>
+        }
         return(
             <div>
                 <CalendarHeader
                 year = {this.state.year}
                 month = {this.state.month}
-                updateFilter={this.handleFilterUpdate}/>
-                <CalendarBody
-                year = {this.state.year}
-                month = {this.state.month}
-                day = {this.state.day}/>
-                <MonthMood />
+                updateFilter={this.handleFilterUpdate}
+                changeShowCalendar={this.changeShowCalendar().bind(this)}/>
+                {subCalendar}
             </div>
         )
     }
