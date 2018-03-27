@@ -141,12 +141,17 @@ class CalendarControl extends React.Component{
             showCalendar: true
         }
         this.handleFilterUpdate = this.handleFilterUpdate.bind(this)
-        this.changeComponent = this.changeComponent.bind(this)
         this.state = {
             year: moment().format('YYYY'),
             month: moment().format('MM'),
             subComponent: null
         }
+    }
+    handleFilterUpdate(filterYear,filterMonth) {
+        this.setState({
+            year: filterYear,
+            month: filterMonth
+        })
     }
 
     handleMonthMood(){

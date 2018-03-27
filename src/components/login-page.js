@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import Axios from 'axios';
+import axios from '../bin/axios'
+import { withCookies } from 'react-cookie'
 require('../styles/login-page.css');
-//import registerServiceWorker from './registerServiceWorker';
 class Login extends Component{
     constructor(props) {
         super(props)
@@ -16,10 +16,10 @@ class Login extends Component{
                 display: 'none'
             }
         }
-        this.handleLogin = this.handleLogin.bind(this)
-        this.handleRegist = this.handleRegist.bind(this)
         this.showLoginForm = this.showLoginForm.bind(this)
         this.showRegistForm = this.showRegistForm.bind(this)
+        this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
+        this.handleRegistSubmit = this.handleRegistSubmit.bind(this)
     }
 
     showLoginForm() {
@@ -44,16 +44,30 @@ class Login extends Component{
         })
     }
 
-    handleLogin() {
-        this.setState({
-            isLogin: true
+    handleLoginSubmit(event) {
+        event.preventDefault()
+        axios.post('/api/v1/user/login', {
+            userName: this.loginUserName.value,
+            password: this.loginPassword.value
         })
+            .then(res => {
+                const data = res.data
+                console.log(data)
+                // const code = data.code
+                // const message = data.message
+                // const userToken = data.token
+                // if(userToken){
+                //     cookies.set('mood_sunshine_user_token',userToken,'24h')
+                //     this.setState({isLogin : true})
+                // }
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
-    handleRegist() {
-        this.setState({
-            isRegist: true
-        })
+    handleRegistSubmit(event) {
+        event.preventDefault()
     }
 
     render() {
@@ -73,17 +87,17 @@ class Login extends Component{
                                 <div className='login-relogin-title' onClick={this.showLoginForm}>登录</div>
                                 <div className='login-relogin-title' onClick={this.showRegistForm}>注册</div>
                             </div>
-                            <div className='login-form-box' style={this.state.loginFormStyle}>
-                                <input type='text' placeholder='手机号或邮箱'/>
-                                <input type='text' placeholder='密码'/>
-                                <button className='login-button' type='button' onClick={this.handleLogin}>登录</button>
-                            </div>
-                            <div className='relogin-form-box' style={this.state.regisFormStyle}>
-                                <input type='text' placeholder='昵称'/>
-                                <input type='text' placeholder='手机号或邮箱'/>
-                                <input type='text' placeholder='密码'/>
-                                <button className='login-button' type='button' onClick={this.handleRegist}>注册</button>
-                            </div>
+                            <form className='login-form-box' style={this.state.loginFormStyle} onSubmit={this.handleLoginSubmit}>
+                                <input className='input-text-box' type='text' placeholder='手机号或邮箱' ref={(input) => this.loginUserName = input}/>
+                                <input className='input-text-box' type='password' placeholder='密码' ref={(input) => this.loginPassword = input}/>
+                                <input className='login-button' type='submit' value='登录'/>
+                            </form>
+                            <form className='relogin-form-box' style={this.state.regisFormStyle} onSubmit={this.handleRegistSubmit}>
+                                <input className='input-text-box' type='text' placeholder='昵称' ref={(input) => this.registUserNickName = input}/>
+                                <input className='input-text-box' type='text' placeholder='手机号或邮箱' ref={(input) => this.registUserName = input}/>
+                                <input className='input-text-box' type='text' placeholder='密码' ref={(input) => this.registPassword = input}/>
+                                <input className='login-button' type='submit' value='注册'/>
+                            </form>
                         </div>
                     </div>
                 </div>

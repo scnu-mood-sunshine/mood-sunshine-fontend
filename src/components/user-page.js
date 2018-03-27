@@ -14,11 +14,7 @@ class UserPage extends React.Component{
             userName : null,
             avata : null,
             description : null,
-<<<<<<< HEAD
-            subComponent: <UserDynamic/>
-=======
             subComponent: <CalendarControl/>
->>>>>>> 77a4a1c1a9fa7d794e4b1de4e3fdcb05f2cb2676
         }
         this.handleClickDynamic = this.handleClickDynamic.bind(this)
         this.handleClickArticle = this.handleClickArticle.bind(this)
