@@ -2,8 +2,9 @@ import React from 'react';
 import NavigationBar from './navigation-bar.js'
 import MoodList from './mood-wall'
 import UserDynamic from './user-dynamic.js'
-import UserArticle from './user-article.js'
+// import UserArticle from './user-article.js'
 import CalendarControl from './calendar-antd.js'
+// import ArticleIntroduction from './article-introduction'
 require('../styles/user-page.css')
 
 class UserPage extends React.Component{
@@ -12,9 +13,18 @@ class UserPage extends React.Component{
         this.state = {
             userName : null,
             avata : null,
-            description : null
+            description : null,
+            subComponent: null
         }
+        this.handleClickDynamic = this.handleClickDynamic.bind(this)
     }
+
+    handleClickDynamic () {
+        this.setState({
+            subComponent: <UserDynamic/>
+        })
+    }
+
     render() {
         return (
             <div>
@@ -29,7 +39,7 @@ class UserPage extends React.Component{
                             <div>关注的人</div>
                         </div>
                         <hr className='long-hr'></hr>
-                        <CalendarControl />
+                        {this.state.subComponent}
                     </div>
                     <div className='user'>
                         <div className='head-container'>

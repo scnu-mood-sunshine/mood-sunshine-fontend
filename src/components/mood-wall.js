@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 require('../styles/moodWall.css') ;
-import ReactDOM from 'react-dom';
 
 var goodMoodWords = ['开心', '喜悦', '狂喜', '尽情', '快乐', '愉悦', '畅快',
  '欣喜', '幸福', '得意', '痛快', '满足', '欢乐', '快活', '陶醉', '甜美', '微笑',
