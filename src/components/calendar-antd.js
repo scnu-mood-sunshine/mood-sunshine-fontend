@@ -8,12 +8,11 @@ class CalendarHeader extends React.Component{
         super(props)
         this.handleLeftClick = this.handleLeftClick.bind(this)
         this.handleRightClick = this.handleRightClick.bind(this)
-        this.handleMoodClick = this.handleMoodClick.bind(this)
-    }
-    state = {
-        year: this.props.year,
-        month: this.props.month,
-        isCalendar: true
+        this.handleMoodCount = this.handleMoodCount.bind(this)
+        this.state = {
+            year: this.props.year,
+            month: this.props.month
+        }
     }
 
     handleMoodClick() {
@@ -49,6 +48,9 @@ class CalendarHeader extends React.Component{
         this.setState(this.state);
         this.props.updateFilter(year,newMonth,this.state.isCalendar);
     }
+    handleMoodCount() {
+        this.props.changeShowCalendar()
+    }
     render(){
         return(
             <div>
@@ -57,7 +59,7 @@ class CalendarHeader extends React.Component{
                     <p>{this.state.year}年</p>
                     <p>{this.state.month}月</p>
                     <div className="triangle-right" onClick={this.handleRightClick}> </div>
-                    <div className='month-mood' onClick={this.handleMoodClick}>本月心情统计</div>
+                    <div className='month-mood' onClick={this.handleMoodCount}>本月心情统计</div>
                 </div>
                 <hr className='headerborder-hr'></hr>
             </div>
@@ -133,6 +135,11 @@ class CalendarBody extends React.Component{
 class CalendarControl extends React.Component{
     constructor(props) {
         super(props)
+        this.state = {
+            year: moment().format('YYYY'),
+            month: moment().format('MM'),
+            showCalendar: true
+        }
         this.handleFilterUpdate = this.handleFilterUpdate.bind(this)
         this.changeComponent = this.changeComponent.bind(this)
         this.state = {
@@ -142,64 +149,39 @@ class CalendarControl extends React.Component{
         }
     }
 
-    handleFilterUpdate(filterYear,filterMonth,isCalendar) {
-        if(isCalendar){
-            this.setState({
-                year: filterYear,
-                month: filterMonth,
-                subComponent: <CalendarBody
-                    year = {this.state.year}
-                    month = {this.state.month}
-                    />
-            });
-        }else{
-            this.setState({
-                year: filterYear,
-                month: filterMonth
-            })
-        }
-    }
-
     handleMonthMood(){
         this.setState({
 
         })
     }
 
-    changeComponent(isCalendar) {
-        if (isCalendar) {
+    changeShowCalendar() {
+        return function () {
+            const showCalendar = this.state.showCalendar
             this.setState({
-                subComponent: <CalendarBody
-                    year = {this.state.year}
-                    month = {this.state.month}
-                    day = {this.state.day}/>
-            })
-        } else {
-            this.setState({
-                subComponent: <MonthMood />
+                showCalendar: !showCalendar
             })
         }
-        
     }
 
-    componentDidMount() {
-        this.setState({
-            subComponent: <CalendarBody
+    render(){
+        let subCalendar = null
+        if (this.state.showCalendar) {
+            subCalendar = <CalendarBody
                 year = {this.state.year}
                 month = {this.state.month}
                 day = {this.state.day}/>
-        })
-    }
-
-    render() {
+        } else {
+            subCalendar = <MonthMood/>
+        }
         return(
             <div>
                 <CalendarHeader
                 year = {this.state.year}
                 month = {this.state.month}
                 updateFilter={this.handleFilterUpdate}
-                changeComponent={this.changeComponent}/>
-                {this.state.subComponent}
+                changeShowCalendar={this.changeShowCalendar().bind(this)}/>
+                {subCalendar}
             </div>
         )
     }
