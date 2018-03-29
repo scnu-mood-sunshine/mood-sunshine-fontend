@@ -24,12 +24,17 @@
   color: #999999;
 }
 
+.article-title-text-container{
+  margin: 0;
+}
+
 .article-title{
   font-size: 18px;
   font-weight: bold;
   color: #333333;
   padding: 0 20px 0 20px;
   margin: 20px 0 0 0;
+  cursor: pointer;
 }
 
 .main-page-article-text{
@@ -38,6 +43,7 @@
   line-height: 24px;
   padding: 0 20px 0 20px;
   margin: 12px 0 0 0;
+  cursor: pointer;
 }
 
 .user-information-box{
@@ -54,6 +60,7 @@
   border-radius: 16px;
   background-color: #aaaaaa;
   display: inline-block;
+  cursor: pointer;
 }
 
 .user-name{
@@ -64,6 +71,7 @@
   font-weight: bold;
   font-size: 18px;
   color: #333333;
+  cursor: pointer;
 }
 
 hr{

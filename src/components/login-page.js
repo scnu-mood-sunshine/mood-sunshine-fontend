@@ -46,20 +46,24 @@ class Login extends Component{
 
     handleLoginSubmit(event) {
         event.preventDefault()
-        axios.post('/api/v1/user/login', {
-            userName: this.loginUserName.value,
+        console.log(this.loginUserName.value)
+        console.log(this.loginPassword.value)
+        axios.post('/api/v1/login', {
+            user_name: this.loginUserName.value,
             password: this.loginPassword.value
         })
             .then(res => {
                 const data = res.data
                 console.log(data)
-                // const code = data.code
-                // const message = data.message
-                // const userToken = data.token
-                // if(userToken){
-                //     cookies.set('mood_sunshine_user_token',userToken,'24h')
-                //     this.setState({isLogin : true})
-                // }
+                const code = data.code
+                const message = data.message
+                const userToken = data.token
+                const {cookies} = this.props
+                if(userToken){
+                    cookies.set('mood_sunshine_user_token',userToken,'24h')
+                    this.setState({isLogin : true})
+                }
+                
             })
             .catch(error => {
                 console.log(error)
@@ -105,4 +109,4 @@ class Login extends Component{
         }
     }
 }
-export default Login;
+export default withCookies(Login);

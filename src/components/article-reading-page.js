@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 require('../styles/article-reading-page.css')
 import MoodWall from './mood-wall.js'
 import axios from '../bin/axios'
+import NavigationBar from './navigation-bar'
 
 class ArticleReading extends Component{
     constructor (props) {
@@ -19,7 +20,8 @@ class ArticleReading extends Component{
         };
     }
     componentDidMount() {
-        axios.get('/api/v1/posts/' + '5aaf84ff0381024a3e557102')
+        console.log(this.props.match)
+        axios.get('/api/v1/posts/' + this.props.match.params.id)
             .then(res => {
                 const data = res.data.data
                 this.setState({
@@ -31,45 +33,48 @@ class ArticleReading extends Component{
 
     render() {
         return(
-            <div className="contain-box">
-                <div>
-                    <div className='article'>
-                        <p className='title'>{this.state.title}</p>
-                        <p className='text'>{this.state.text}</p>
-                        <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
-                    </div>
-                    <div className='imformation-container'>
-                        <div className='author-imformation-container'>
-                            <div className='little-title'>关于作者</div>
-                            <hr className='long-hr'></hr>
-                            <div className='author-imformation-box'>
-                                <div className='author-headpicture'>
-                                    <img src={this.state.author.avatar}/>
-                                </div>
-                                <div className='author-name-box'>
-                                    <a className='user-link'>{this.state.author.name}</a>
-                                    <div className='user-description'>{this.state.author.desc}</div>
-                                </div>
-                                <button className='follow-button' type='button'></button>
-                            </div>
-                            <hr className='short-hr'></hr>
-                            <div className='author-article-mood-followers'>
-                                <div className='article-number-box'>
-                                    <div className='article-text'>文章</div>
-                                    <div className='article-number'>56</div>
-                                </div>
-                                <div className='article-number-box'>
-                                    <div className='article-text'>文章</div>
-                                    <div className='article-number'>56</div>
-                                </div>
-                                <div className='article-number-box'>
-                                    <div className='article-text'>文章</div>
-                                    <div className='article-number'>56</div>
-                                </div>
-                            </div>
-                            <div></div>
+            <div>
+                <NavigationBar />
+                <div className="contain-box">
+                    <div>
+                        <div className='article'>
+                            <p className='title'>{this.state.title}</p>
+                            <p className='text'>{this.state.text}</p>
+                            <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
                         </div>
-                        <MoodWall />
+                        <div className='imformation-container'>
+                            <div className='author-imformation-container'>
+                                <div className='little-title'>关于作者</div>
+                                <hr className='long-hr'></hr>
+                                <div className='author-imformation-box'>
+                                    <div className='author-headpicture'>
+                                        <img src={this.state.author.avatar}/>
+                                    </div>
+                                    <div className='author-name-box'>
+                                        <a className='user-link'>{this.state.author.name}</a>
+                                        <div className='user-description'>{this.state.author.desc}</div>
+                                    </div>
+                                    <button className='follow-button' type='button'></button>
+                                </div>
+                                <hr className='short-hr'></hr>
+                                <div className='author-article-mood-followers'>
+                                    <div className='article-number-box'>
+                                        <div className='article-text'>文章</div>
+                                        <div className='article-number'>56</div>
+                                    </div>
+                                    <div className='article-number-box'>
+                                        <div className='article-text'>文章</div>
+                                        <div className='article-number'>56</div>
+                                    </div>
+                                    <div className='article-number-box'>
+                                        <div className='article-text'>文章</div>
+                                        <div className='article-number'>56</div>
+                                    </div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <MoodWall />
+                        </div>
                     </div>
                 </div>
             </div>

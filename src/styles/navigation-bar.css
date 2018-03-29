@@ -19,9 +19,8 @@
     line-height: 52px;
 } 
 
-a {
+li > a {
     line-height: 54px;
-    text-decoration: none;
     color: #888;
 }
 

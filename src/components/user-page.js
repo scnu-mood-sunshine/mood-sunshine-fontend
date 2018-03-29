@@ -14,7 +14,7 @@ class UserPage extends React.Component{
             userName : null,
             avata : null,
             description : null,
-            subComponent: <CalendarControl/>
+            subComponent: <UserArticle/>
         }
         this.handleClickDynamic = this.handleClickDynamic.bind(this)
         this.handleClickArticle = this.handleClickArticle.bind(this)

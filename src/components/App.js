@@ -33,7 +33,7 @@ class AppComponent extends React.Component {
           }} component={UserPage}/>
           <Route path='/editor' component={Editor}/>
           <Route path='/login' component={LoginPage}/>
-          <Route path='/artic' component={ArticleReading}/>
+          <Route path='/article/:id' component={ArticleReading}/>
         </Switch>
       </div>
     )

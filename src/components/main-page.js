@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MoodList from './mood-wall'
 import NavigationBar from './navigation-bar'
 import ArticleIntroduction from './article-introduction'
+import { Link } from 'react-router-dom'
 import axios from '../bin/axios'
 require('../styles/main-page.css')
 
@@ -33,7 +34,8 @@ class MainPage extends Component {
           title={item.title}
           introduction={item.introduction}
           views={item.views}
-          moodNum={item.mood_get}/>
+          moodNum={item.mood_get}
+          articleID={item.id}/>
       )
       i++
     }
@@ -47,8 +49,8 @@ class MainPage extends Component {
             </ul>
           </div>
           <div id="function-container" className="function-container">
-              <input type="button" className="button"/>
-              <input type="button" className="button right-button"/>
+              <div type="button" className="button"><Link to={{pathname: '/editor'}}>写文章</Link></div>
+              <div type="button" className="button right-button"></div>
               <MoodList />
           </div>
         </div>

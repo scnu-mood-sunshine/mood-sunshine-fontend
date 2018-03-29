@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 require('../styles/article-introduction.css')
 
 class ArticleIntroduction extends Component {
@@ -6,6 +7,7 @@ class ArticleIntroduction extends Component {
     super(props)
   }
   render() {
+    console.log(this.props)
     return (
       <li className="article-box">
         <div className="user-information-box">
@@ -14,8 +16,12 @@ class ArticleIntroduction extends Component {
           <p className="time">{this.props.postTime}</p>
         </div>
         <hr/>
-        <p className="article-title">{this.props.title}</p>
-        <p className="main-page-article-text">{this.props.introduction}</p>
+        <div className='article-title-text-container'>
+          <Link to={{pathname: '/article/' + this.props.articleID}}>
+            <p className="article-title">{this.props.title}</p>
+            <p className="main-page-article-text">{this.props.introduction}</p>
+          </Link>
+        </div>
         <div className='article-imformation'>
           <div>
             <p>阅读数：</p><p>{this.props.views}</p>
@@ -29,16 +35,6 @@ class ArticleIntroduction extends Component {
   }
 }
 
-ArticleIntroduction.defaultProps = {
-  author: 'Rfon',
-  postTime: Date.now().toLocaleString(),
-  title: '我是标题',
-  introduction: '我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介.',
-  views: Math.ceil(10 * Math.random() * 100 * Math.random()),
-  moodNum: Math.ceil(10 * Math.random() * 100 * Math.random())
-}
-
-
 ArticleIntroduction.propTypes = {
   author: React.PropTypes.string,
   postTime: React.PropTypes.string,
@@ -47,6 +43,16 @@ ArticleIntroduction.propTypes = {
   views: React.PropTypes.number,
   moodNum: React.PropTypes.number
 }
+// ArticleIntroduction.defaultProps = {
+//   author: 'Rfon',
+//   postTime: Date.now().toLocaleString(),
+//   title: '我是标题',
+//   introduction: '我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介，我是简介.',
+//   views: Math.ceil(10 * Math.random() * 100 * Math.random()),
+//   moodNum: Math.ceil(10 * Math.random() * 100 * Math.random())
+// }
+
+
 
 
 // ArticleIntroduction.propTypes = {
