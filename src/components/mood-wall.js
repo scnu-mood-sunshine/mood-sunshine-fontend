@@ -11,7 +11,7 @@ var badMoodWords = ['心烦', '失落', '伤感', '忧伤', '委屈', '绝望', 
  '不欣喜', '不幸福', '不得意', '不痛快', '不满足', '不欢乐', '不快活', '不陶醉', '不甜美', '不微笑',
  '不兴奋', '不自豪', '不欣慰', '不高兴', '不满意']
 
-var normalMoodWords = ['无聊', '平淡', '一般', '平常', '普通']
+var normalMoodWords = ['无聊', '平淡', '一般', '平常', '普通', '不心烦']
 
 function analysisGoodMood(str){
     let counter = 0

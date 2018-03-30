@@ -43,7 +43,7 @@ class UserPage extends React.Component{
         return (
             <div>
                 <NavigationBar />
-                <div className='container'>
+                <div className='container-box'>
                     <div className='function-box'>
                         <div className='function-option-container'>
                             <div onClick={this.handleClickDynamic}>动态</div>
@@ -60,8 +60,11 @@ class UserPage extends React.Component{
                             <div className='head-picture-box'>
                             </div>
                             <div className='user-imformation-container'>
-                                <div className='user-name'>
+                                <div className='user-page-user-name'>
                                     UserName
+                                </div>
+                                <div className='user-sign'>
+                                    物质永远无法得到满足，精神却可以被轻易慰籍
                                 </div>
                             </div>
                         </div>

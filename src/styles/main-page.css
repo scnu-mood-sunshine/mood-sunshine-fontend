@@ -1,12 +1,12 @@
 .contain-box{
   width: 1200px;
-  margin: 0 auto;
+  margin: 52px auto;
 }
 
 .function-container{
-  float: left;
   width: 500px;
-  margin: 30px 0 0 30px;
+  margin: 0 0 0 690px;
+  position: fixed;
 }
 
 .articleList{
