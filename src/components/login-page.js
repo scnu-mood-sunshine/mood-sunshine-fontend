@@ -14,6 +14,12 @@ class Login extends Component{
             },
             regisFormStyle: {
                 display: 'none'
+            },
+            loginTitle: {
+                color: '#ff5454'
+            },
+            registTitle: {
+                color: '#999999'
             }
         }
         this.showLoginForm = this.showLoginForm.bind(this)
@@ -29,6 +35,12 @@ class Login extends Component{
             },
             regisFormStyle: {
                 display: 'none'
+            },
+            loginTitle: {
+                color: '#ff5454'
+            },
+            registTitle: {
+                color: '#999999'
             }
         })
     }
@@ -40,21 +52,24 @@ class Login extends Component{
             },
             regisFormStyle: {
                 display: 'block'
+            },
+            loginTitle: {
+                color: '#999999'
+            },
+            registTitle: {
+                color: '#ff5454'
             }
         })
     }
 
     handleLoginSubmit(event) {
         event.preventDefault()
-        console.log(this.loginUserName.value)
-        console.log(this.loginPassword.value)
         axios.post('/api/v1/login', {
             user_name: this.loginUserName.value,
             password: this.loginPassword.value
         })
             .then(res => {
                 const data = res.data
-                console.log(data)
                 const code = data.code
                 const message = data.message
                 const userToken = data.token
@@ -88,8 +103,8 @@ class Login extends Component{
                     <div className="login-relogin-box">
                         <div className='login-box'>
                             <div className='normal-title'>
-                                <div className='login-relogin-title' onClick={this.showLoginForm}>登录</div>
-                                <div className='login-relogin-title' onClick={this.showRegistForm}>注册</div>
+                                <div className='login-relogin-title' style={this.state.loginTitle} onClick={this.showLoginForm}>登录</div>
+                                <div className='login-relogin-title' style={this.state.registTitle} onClick={this.showRegistForm}>注册</div>
                             </div>
                             <form className='login-form-box' style={this.state.loginFormStyle} onSubmit={this.handleLoginSubmit}>
                                 <input className='input-text-box' type='text' placeholder='手机号或邮箱' ref={(input) => this.loginUserName = input}/>

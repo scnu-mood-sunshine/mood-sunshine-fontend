@@ -47,7 +47,7 @@ class NavigationBar extends Component{
                     <li><Link to={{pathname: '/'}}>心晴</Link></li>
                     {loginOrisLogin}
                     <li className='right-icon'><Link to={{pathname: '/'}}>动态</Link></li>
-                    <li className='right-icon'><Link to={{pathname: '/'}}>消息</Link></li>
+                    <li className='right-icon'><Link to={{pathname: '/'}}>文章</Link></li>
                 </div>
             </div>
         )

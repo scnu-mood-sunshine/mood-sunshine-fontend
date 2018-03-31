@@ -19,18 +19,21 @@
     font-size: 200px;
     font-weight: 900;
     color: #ff5454;
+    user-select: none;
 }
 
 .small-title{
     font-size: 60px;
     font-weight: 900;
     color: #ff5454;
+    user-select: none;
 }
 
 .login-text{
     margin-top: 10px;
     font-size: 34px;
-    color: #1a1a1a;
+    color: #333333;
+    user-select: none;
 }
 
 .login-relogin-box{
@@ -57,7 +60,6 @@
 .login-relogin-title{
     font-size: 18px;
     font-weight: 400;
-    color: #999999;
     display: inline-block;
     padding: 30px;
     cursor: pointer;

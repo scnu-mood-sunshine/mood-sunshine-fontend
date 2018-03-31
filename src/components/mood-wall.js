@@ -13,6 +13,14 @@ var badMoodWords = ['心烦', '失落', '伤感', '忧伤', '委屈', '绝望', 
 
 var normalMoodWords = ['无聊', '平淡', '一般', '平常', '普通', '不心烦']
 
+var moodWords = ['开心', '喜悦', '狂喜', '尽情', '快乐', '愉悦', '畅快',
+ '欣喜', '幸福', '得意', '痛快', '满足', '欢乐', '快活', '陶醉', '甜美', '微笑',
+ '兴奋', '自豪', '欣慰', '高兴', '满意','心烦', '失落', '伤感', '忧伤', '委屈', '绝望', '哭泣', '伤心', '痛苦', '悲伤',
+ '悲泣', '忧伤', '悲痛', '沮丧', '气馁', '郁闷', '烦躁', '低沉', '消沉', '悲观', '消极', '酸涩',
+ '落魄', '绝望', '呆滞','不开心', '不喜悦', '不狂喜', '不尽情', '不快乐', '不愉悦', '不畅快',
+ '不欣喜', '不幸福', '不得意', '不痛快', '不满足', '不欢乐', '不快活', '不陶醉', '不甜美', '不微笑',
+ '不兴奋', '不自豪', '不欣慰', '不高兴', '不满意','无聊', '平淡', '一般', '平常', '普通', '不心烦']
+
 function analysisGoodMood(str){
     let counter = 0
     let goodMood = ''
@@ -58,7 +66,7 @@ function analysisNormalMood(str){
 }
 
 function MoodBoxUIChange(props){
-    const sentence = '我今天早上心情非常不高兴,很痛苦,兴奋'
+    const sentence = '我今天早上心情非常不高兴,很痛苦,不心烦'
     var good = analysisGoodMood(sentence)
     var bad = analysisBadMood(sentence)
     var normal = analysisNormalMood(sentence)
