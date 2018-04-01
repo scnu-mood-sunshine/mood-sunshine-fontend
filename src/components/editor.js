@@ -86,6 +86,7 @@ class Editor extends React.Component {
 
   handleHTMLChange = (htmlContent) => {
     this.setState({ htmlContent })
+    console.log(htmlContent)
   }
 
 }
