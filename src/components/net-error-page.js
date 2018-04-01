@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 require('../styles/net-error-page.css')
 
 class netErrorPage extends React.Component{
@@ -25,6 +26,7 @@ class netErrorPage extends React.Component{
                     <div className='error-text'>
                         {this.state.errorText}
                     </div>
+                    <div className='return-button'><Link to={{pathname: '/'}}>返回主页</Link></div>
                 </div>
             </div>
         )

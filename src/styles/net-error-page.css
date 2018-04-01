@@ -10,7 +10,7 @@
 }
 
 .error-text-container{
-    margin: 150px 0 0 80px;
+    margin: 120px 0 0 80px;
     display: inline-block;
     vertical-align: top;
 }
@@ -28,4 +28,19 @@
     width: 400px;
     text-align: left;
     color: #ccc;
+}
+
+.return-button{
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #fff;
+    margin: 40px 20px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.return-button > a{
+    color: #888;
 }

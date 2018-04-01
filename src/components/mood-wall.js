@@ -94,9 +94,7 @@ function MoodBoxUIChange(props){
     )
 }
 
-function addMood(){
-    alert('add mood here')
-}
+
 
 class MoodWall extends Component {
     render(){
