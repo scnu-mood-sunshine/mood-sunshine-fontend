@@ -16,7 +16,10 @@ class ArticleReading extends Component{
                 // avatar: 'http://oqzgtjqen.bkt.clouddn.com/%E6%88%90%E9%BE%99%E5%B4%A9%E6%BA%83.jpg',
                 name: 'Rfon',
                 desc: '吊毛'
-            }
+            },
+            goodDivWidth : 250,
+            normalDivWidth : 450,
+            badDivWidth : 350
         };
     }
     componentDidMount() {
@@ -71,9 +74,22 @@ class ArticleReading extends Component{
                                         <div className='article-number'>56</div>
                                     </div>
                                 </div>
-                                <div></div>
                             </div>
-                            <MoodWall />
+                                <div className='article-mood-wall'>
+                                    <p>文章心情指数</p>
+                                    <div className={'article-progress-container'}>
+                                        <div className='article-mood-record-progress article-good-mood' style={{width:this.state.goodDivWidth}}></div>
+                                        <p style={{color: '#ff6969'}}>{this.state.goodDivWidth}</p>
+                                    </div>
+                                    <div className='article-progress-container'>
+                                        <div className='article-mood-record-progress article-normal-mood' style={{width:this.state.normalDivWidth}}></div>
+                                        <p style={{color: '#bfb2e2'}}>{this.state.normalDivWidth}</p>
+                                    </div>
+                                    <div className='article-progress-container'>
+                                        <div className='article-mood-record-progress article-bad-mood' style={{width:this.state.badDivWidth}}></div>
+                                        <p style={{color: '#90919a'}}>{this.state.badDivWidth}</p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
