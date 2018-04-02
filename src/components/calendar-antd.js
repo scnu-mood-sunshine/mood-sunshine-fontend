@@ -14,6 +14,14 @@ class CalendarHeader extends React.Component{
             month: this.props.month
         }
     }
+
+    handleMoodClick() {
+        this.props.changeComponent(!this.state.isCalendar)
+        this.setState({
+            isCalendar: !this.state.isCalendar
+        })
+    }
+
     handleLeftClick(){
         let newMonth = parseInt(this.state.month) - 1;
         let year = this.state.year;
@@ -22,9 +30,10 @@ class CalendarHeader extends React.Component{
             newMonth = 12;
         }
         this.state.month = newMonth;
+        console.log(newMonth)
         this.state.year=year;
         this.setState(this.state);
-        this.props.updateFilter(year,newMonth);
+        this.props.updateFilter(year,newMonth,this.state.isCalendar);
     }
     handleRightClick(){
         let newMonth = parseInt(this.state.month) + 1;
@@ -33,10 +42,11 @@ class CalendarHeader extends React.Component{
             year ++;
             newMonth = 1;
         }
+        console.log(newMonth)
         this.state.month = newMonth;
         this.state.year=year;
         this.setState(this.state);
-        this.props.updateFilter(year,newMonth);
+        this.props.updateFilter(year,newMonth,this.state.isCalendar);
     }
     handleMoodCount() {
         this.props.changeShowCalendar()
@@ -94,12 +104,8 @@ class CalendarBody extends React.Component{
                 node1.push(<li key={i}></li>)
             }
             for(let i = 1 ;i <= getDays; i++ ){
-
-                if (day === i) {
                     node2.push(<li key={i+node1.length}><div>{i}</div>{moodPoint}</li>)
-                } else {
-                    node2.push(<li key={i+node1.length}><div>{i}</div>{moodPoint}</li>)
-                }
+                
             }
         return(
             <div>
@@ -131,13 +137,23 @@ class CalendarControl extends React.Component{
             showCalendar: true
         }
         this.handleFilterUpdate = this.handleFilterUpdate.bind(this)
+        this.state = {
+            year: moment().format('YYYY'),
+            month: moment().format('MM'),
+            subComponent: null
+        }
     }
-
     handleFilterUpdate(filterYear,filterMonth) {
         this.setState({
             year: filterYear,
             month: filterMonth
-        });
+        })
+    }
+
+    handleMonthMood(){
+        this.setState({
+
+        })
     }
 
     changeShowCalendar() {

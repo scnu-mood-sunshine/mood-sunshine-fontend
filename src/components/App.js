@@ -1,5 +1,5 @@
 //require('normalize.css/normalize.css');
-require('styles/App.css');
+require('../styles/App.css');
 
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
@@ -12,7 +12,8 @@ import CalendarAntd from './calendar-antd'
 import ArticleIntroduction from './article-introduction'
 // 引入编辑器以及编辑器样式
 import Editor from './editor'
-
+import netErrorPage from './net-error-page'
+import { withCookies } from 'react-cookie'
 
 class AppComponent extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class AppComponent extends React.Component {
   }
 
   render() {
-    
+
     return (
       <div>
         <Switch>
@@ -34,10 +35,11 @@ class AppComponent extends React.Component {
           <Route path='/editor' component={Editor}/>
           <Route path='/login' component={LoginPage}/>
           <Route path='/article/:id' component={ArticleReading}/>
+          <Route path='/404wrong' component={netErrorPage}/>
         </Switch>
       </div>
     )
   }
 }
 
-export default AppComponent;
+export default withCookies(AppComponent);

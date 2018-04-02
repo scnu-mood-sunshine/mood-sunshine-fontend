@@ -4,6 +4,8 @@
     background-color: #fff;
     color: #888;
     box-shadow: 0 2px 10px rgba(204,204,204,0.2);
+    position: fixed;
+    top: 0;
 }
 
 .nav-bar-container{
@@ -19,9 +21,8 @@
     line-height: 52px;
 } 
 
-a {
+li > a {
     line-height: 54px;
-    text-decoration: none;
     color: #888;
 }
 
