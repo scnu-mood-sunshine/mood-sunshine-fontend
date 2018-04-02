@@ -5,19 +5,30 @@ import 'braft-editor/dist/braft.css'
 // import axios from 'axios'
 require('../styles/editor.css')
 
-class Editor extends React.Component {
-
-  state = {
-    htmlContent: ''
+/**
+ * 根据content提取文章简介
+ * @param {Object} content //文章内容对象
+ */
+function getIntroduction (content) {
+  let introduction = ''
+  for (let raw of content) {
+    introduction += raw.text
+    if (introduction.length > 150) {
+      break
+    }
   }
 
-  // handleChange = (content) => {
-  //   console.log(content)
-  // }
+  return introduction.slice(0, 150)
+}
 
-  // handleRawChange = (rawContent) => {
-  //   console.log(rawContent)
-  // }
+class Editor extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      htmlContent: ''
+    }
+  }
 
   uploadFn = (param) => {
     if (param.file.size > 5192000) {
@@ -86,7 +97,6 @@ class Editor extends React.Component {
 
   handleHTMLChange = (htmlContent) => {
     this.setState({ htmlContent })
-    console.log(htmlContent)
   }
 
 }

@@ -23,7 +23,6 @@ class ArticleReading extends Component{
         };
     }
     componentDidMount() {
-        console.log(this.props.match)
         axios.get('/api/v1/posts/' + this.props.match.params.id)
             .then(res => {
                 const data = res.data.data
@@ -42,7 +41,6 @@ class ArticleReading extends Component{
                     <div>
                         <div className='article'>
                             <p className='title'>{this.state.title}</p>
-                            <p className='reading-text'>{this.state.text}</p>
                             <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
                         </div>
                         <div className='imformation-container'>

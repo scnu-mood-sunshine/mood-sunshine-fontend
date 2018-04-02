@@ -7,7 +7,6 @@ class ArticleIntroduction extends Component {
     super(props)
   }
   render() {
-    console.log(this.props)
     return (
       <li className="article-box">
         <div className="user-information-box">
