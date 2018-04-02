@@ -104,8 +104,7 @@ class CalendarBody extends React.Component{
                 node1.push(<li key={i}></li>)
             }
             for(let i = 1 ;i <= getDays; i++ ){
-                    node2.push(<li key={i+node1.length}><div>{i}</div>{moodPoint}</li>)
-                
+                node2.push(<li key={i+node1.length}><div>{i}</div>{moodPoint}</li>)
             }
         return(
             <div>

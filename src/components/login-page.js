@@ -20,7 +20,8 @@ class Login extends Component{
             },
             registTitle: {
                 color: '#999999'
-            }
+            },
+            loginMessage: null
         }
         this.showLoginForm = this.showLoginForm.bind(this)
         this.showRegistForm = this.showRegistForm.bind(this)
@@ -76,7 +77,16 @@ class Login extends Component{
                 const {cookies} = this.props
                 if(userToken){
                     cookies.set('mood_sunshine_user_token',userToken,'24h')
+                    axios.get('/api/auth/user', {
+                        headers:{
+                            'Authorization':'Bearer ' + userToken
+                        }
+                    }).then(res => {
+                        cookies.set('mood_sunshine_user_imformation', res.data.data, '24h')
+                    })
                     this.setState({isLogin : true})
+                }else{
+                    this.setState({loginMessage: message})
                 }
                 
             })
@@ -109,6 +119,7 @@ class Login extends Component{
                             <form className='login-form-box' style={this.state.loginFormStyle} onSubmit={this.handleLoginSubmit}>
                                 <input className='input-text-box' type='text' placeholder='手机号或邮箱' ref={(input) => this.loginUserName = input}/>
                                 <input className='input-text-box' type='password' placeholder='密码' ref={(input) => this.loginPassword = input}/>
+                                <p className='login-message'>{this.state.loginMessage}</p>
                                 <input className='login-button' type='submit' value='登录'/>
                             </form>
                             <form className='relogin-form-box' style={this.state.regisFormStyle} onSubmit={this.handleRegistSubmit}>

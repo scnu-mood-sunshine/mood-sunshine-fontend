@@ -21,14 +21,14 @@
 }
 
 .long-hr{
-    width: 500px;
+    width: 460px;
     height: 1px;
     background-color: #eeeeee;
     border: none;
 }
 
 .short-hr{
-    width: 440px;
+    width: 400px;
     height: 1px;
     background-color: #eeeeee;
     border: none;
@@ -48,13 +48,18 @@
     word-break: break-all;
 }
 
+.image-wrap > img{
+    max-width: 100%;
+}
+
 .imformation-container{
     width: 460px;
-    float: right;
+    position: fixed;
+    margin: 0 0 0 730px;
 }
 
 .author-imformation-container{
-    width: 500px;
+    width: 460px;
     height: 300px;
     background-color: #fff;
     border-radius: 8px;
@@ -110,13 +115,13 @@
 }
 
 .author-article-mood-followers{
-    width: 500px;
+    width: 460px;
     box-sizing: border-box;
     padding: 20px 30px;
 }
 
 .article-number-box{
-    width: 144px;
+    width: 130px;
     box-sizing: border-box;
     padding: 0 30px;
     display: inline-block;
@@ -146,7 +151,7 @@
 .article-mood-wall{
   padding: 25px 25px 40px 25px;
   box-sizing: border-box;
-  width: 500px;
+  width: 460px;
   height: 100%;
   border-radius: 6px;
   margin-top: 30px;
@@ -160,7 +165,7 @@
 
 .article-mood-record-progress{
     width: 0px;
-    max-width: 400px;
+    max-width: 360px;
     height: 16px;
     border-radius: 8px;
     display: inline-block;
