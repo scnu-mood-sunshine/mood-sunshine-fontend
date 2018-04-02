@@ -41,7 +41,11 @@ class ArticleReading extends Component{
                     <div>
                         <div className='article'>
                             <p className='title'>{this.state.title}</p>
+<<<<<<< HEAD
                             <div className="content" dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+=======
+                            <div className='reading-text' dangerouslySetInnerHTML={{__html: this.state.text}}></div>
+>>>>>>> 6928612e69097d23aa550b1aab42c6f545c46a6b
                         </div>
                         <div className='imformation-container'>
                             <div className='author-imformation-container'>

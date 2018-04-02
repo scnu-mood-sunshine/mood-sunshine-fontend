@@ -83,6 +83,10 @@
     color: #888;
 }
 
+.login-message{
+    color: #ff5454;
+}
+
 .login-button{
     margin-top: 40px;
     width: 300px;

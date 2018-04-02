@@ -9,6 +9,7 @@ class NavigationBar extends Component{
         this.state = {
             isLogin : false,
             user : '登录/注册',
+            avatar : null,
             isScrollStyle : {
                 opacity : 1
             }
@@ -19,7 +20,8 @@ class NavigationBar extends Component{
     componentDidMount(){
         const {cookies} = this.props
         if(cookies.get('mood_sunshine_user_token')){
-            this.setState({isLogin : true, user : '个人'})
+            const userAvatar = cookies.get('mood_sunshine_user_imformation').avatar
+            this.setState({isLogin: true, avatar: userAvatar})
         }
         window.addEventListener('scroll',this.handleOnScroll)
     }
@@ -45,7 +47,7 @@ class NavigationBar extends Component{
     render(){
         let loginOrisLogin = null
         if(this.state.isLogin){
-            loginOrisLogin = <li className='right-icon'><Link to={{pathname: '/userinfo'}}>{this.state.user}</Link></li>
+            loginOrisLogin = <li className='right-icon'><Link to={{pathname: '/userinfo'}} className='user-avatar-box'><img src={this.state.avatar}></img></Link></li>
         }else{
             loginOrisLogin = <li className='right-icon'><Link to={{pathname: '/login'}}>{this.state.user}</Link></li>
         }
