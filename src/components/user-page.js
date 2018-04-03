@@ -16,6 +16,7 @@ class UserPage extends React.Component{
             userName : null,
             avatar : null,
             description : null,
+            userPosts: [],
             subComponent: <UserArticle/>
         }
         this.handleClickDynamic = this.handleClickDynamic.bind(this)
@@ -24,15 +25,23 @@ class UserPage extends React.Component{
     }
 
     componentDidMount(){
-        const {cookies} = this.props
+        const { cookies } = this.props
         let userData = cookies.get('mood_sunshine_user_imformation')
         const userNickname = userData.nickname
         const userAvatar = userData.avatar
-        console.log(userData)
-        this.setState({
-            userName: userNickname,
-            avatar: userAvatar
+        axios.get('/api/auth/userposts', {
+            headers: {
+                'Authorization': 'Bearer ' + cookies.get('mood_sunshine_user_token')
+            }
         })
+            .then(res => {
+                const userPosts = res.data.data
+                this.setState({
+                    userName: userNickname,
+                    avatar: userAvatar,
+                    userPosts: userPosts
+                })
+            })
     }
 
     handleClickDynamic () {
@@ -42,8 +51,13 @@ class UserPage extends React.Component{
     }
 
     handleClickArticle () {
+        const UserArticles = []
+        for (let item of this.state.userPosts) {
+            UserArticle.push(<UserArticle title={item.title}
+                introduction={item.introduction} time={item.update_at}/>)
+        }
         this.setState({
-            subComponent: <UserArticle/>
+            subComponent: UserArticles
         })
     }
 

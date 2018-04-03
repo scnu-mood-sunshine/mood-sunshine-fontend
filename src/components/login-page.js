@@ -88,10 +88,6 @@ class Login extends Component{
                 }else{
                     this.setState({loginMessage: message})
                 }
-                
-            })
-            .catch(error => {
-                console.log(error)
             })
     }
 
