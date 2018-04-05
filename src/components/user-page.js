@@ -17,7 +17,7 @@ class UserPage extends React.Component{
             avatar : null,
             description : null,
             userPosts: [],
-            subComponent: <UserArticle/>
+            subComponent: <CalendarControl/>
         }
         this.handleClickDynamic = this.handleClickDynamic.bind(this)
         this.handleClickArticle = this.handleClickArticle.bind(this)
@@ -53,8 +53,10 @@ class UserPage extends React.Component{
     handleClickArticle () {
         const UserArticles = []
         for (let item of this.state.userPosts) {
-            UserArticle.push(<UserArticle title={item.title}
-                introduction={item.introduction} time={item.update_at}/>)
+            UserArticles.push(<UserArticle title={item.title}
+                introduction={item.introduction} time={item.update_at}
+                postId={item.id}
+                key={Math.ceil(Math.random() * 1000)}/>)
         }
         this.setState({
             subComponent: UserArticles

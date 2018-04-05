@@ -1,5 +1,6 @@
 import React from 'react';
 import { withCookies } from 'react-cookie'
+import { Link } from 'react-router-dom'
 require('../styles/user-article.css')
 
 class UserArticle extends React.Component{
@@ -17,7 +18,7 @@ class UserArticle extends React.Component{
                         {this.props.introduction}
                     </div>
                     <div className='read-full-option'>
-                        查看全文
+                        <Link to={{pathname: '/article/' + this.props.postId}}>查看全文</Link>
                     </div>
                 </div>
                 <hr className='hr'></hr>

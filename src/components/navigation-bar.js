@@ -17,12 +17,15 @@ class NavigationBar extends Component{
         this.handleOnScroll = this.handleOnScroll.bind(this)
     }
 
-    componentDidMount(){
+    componentWillMount() {
         const {cookies} = this.props
         if(cookies.get('mood_sunshine_user_token')){
             const userAvatar = cookies.get('mood_sunshine_user_imformation').avatar
             this.setState({isLogin: true, avatar: userAvatar})
         }
+    }
+
+    componentDidMount(){
         window.addEventListener('scroll',this.handleOnScroll)
     }
 
@@ -46,6 +49,7 @@ class NavigationBar extends Component{
 
     render(){
         let loginOrisLogin = null
+        console.log(this.state.isLogin)
         if(this.state.isLogin){
             loginOrisLogin = <li className='right-icon'><Link to={{pathname: '/userinfo'}} className='user-avatar-box'><img src={this.state.avatar}></img></Link></li>
         }else{
