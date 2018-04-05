@@ -11,8 +11,10 @@ class ArticleIntroduction extends Component {
     return (
       <li className="article-box">
         <div className="user-information-box">
-          <div className="user-head-picture"></div>
-          <p className="user-name">{this.props.author}</p>
+          <div className="user-head-picture">
+            <img src={this.props.author.avatar}/>
+          </div>
+          <p className="user-name">{this.props.author.name}</p>
           <p className="time">{this.props.postTime}</p>
         </div>
         <hr/>
