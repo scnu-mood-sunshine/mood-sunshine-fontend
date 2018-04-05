@@ -1,5 +1,4 @@
 import React from 'react'
-import Animated from ''
 require('../styles/month-mood.css')
 
 class RecordMood extends React.Component{

@@ -61,6 +61,12 @@
   background-color: #aaaaaa;
   display: inline-block;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.user-head-picture > img {
+  width: 100%;
+  height: 100%;
 }
 
 .user-name{
