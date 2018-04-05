@@ -1,4 +1,4 @@
-.mood-wall > p{
+.mood-wall > h1{
   font-size: 18px;
   color: #333333;
   margin: 0;
@@ -21,10 +21,9 @@ ul{
 
 .mood-box{
     width:450px;
-    height: 120px;
     border-radius: 6px;
     list-style-type: none;
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 18px 25px;
     box-sizing: border-box;
 }
@@ -60,7 +59,7 @@ ul{
 
 .good-mood-box{
     background: linear-gradient(to right, #ff5454, #ff6969);
-    box-shadow: 0 5px 15px rgba(255, 85, 85, 0.4)
+    box-shadow: 0 5px 15px rgba(255, 84, 84, 0.4)
 }
 
 .normal-mood-box{
@@ -73,10 +72,30 @@ ul{
     box-shadow: 0 5px 15px rgba(108, 110, 118, 0.4)
 }
 
-li > h1{
+.mood-text-container{
+    display: inline-block;
+    width: 300px;
+}
+
+.mood-text-container > h1{
     font-size: 24px;
     font-weight: bold;
     color: #fff;
     padding: 0px;
     margin: 0px;
+}
+
+.mood-text-container > p{
+    width: 300px;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.face-images{
+    display: inline-block;
+    width: 100px;
+    padding: 14px 8px 14px 20px;
+    box-sizing: border-box;
 }

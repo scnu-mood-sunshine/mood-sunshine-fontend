@@ -1,4 +1,5 @@
 import React from 'react'
+import Animated from ''
 require('../styles/month-mood.css')
 
 class RecordMood extends React.Component{
@@ -13,8 +14,8 @@ class RecordMood extends React.Component{
     componentDidMount(){
         this.setState({
             goodDivWidth : 500,
-            normalDivWidth : 100,
-            badDivWidth : 50
+            normalDivWidth : 300,
+            badDivWidth : 90
         })
     }
     render(){
