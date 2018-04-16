@@ -36,14 +36,14 @@ class ArticleIntroduction extends Component {
   }
 }
 
-ArticleIntroduction.propTypes = {
-  author: React.PropTypes.string,
-  postTime: React.PropTypes.string,
-  title: React.PropTypes.string,
-  introduction: React.PropTypes.string,
-  views: React.PropTypes.number,
-  moodNum: React.PropTypes.number
-}
+// ArticleIntroduction.propTypes = {
+//   author: React.PropTypes.string,
+//   postTime: React.PropTypes.string,
+//   title: React.PropTypes.string,
+//   introduction: React.PropTypes.string,
+//   views: React.PropTypes.number,
+//   moodNum: React.PropTypes.number
+// }
 // ArticleIntroduction.defaultProps = {
 //   author: 'Rfon',
 //   postTime: Date.now().toLocaleString(),

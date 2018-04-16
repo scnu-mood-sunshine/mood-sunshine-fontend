@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 axios.interceptors.request.use(function (config) {
-  config.baseURL = 'http://192.168.1.10:8424';
+  config.baseURL = 'http://192.168.1.5:8424';
     return config;
   }, function (error) {
     return Promise.reject(error);
