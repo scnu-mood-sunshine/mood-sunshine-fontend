@@ -15,7 +15,7 @@ class ArticleReading extends Component{
             author: {
                 // avatar: 'http://oqzgtjqen.bkt.clouddn.com/%E6%88%90%E9%BE%99%E5%B4%A9%E6%BA%83.jpg',
                 name: 'Rfon',
-                desc: '吊毛'
+                desc: 'fon'
             },
             goodDivWidth : 250,
             normalDivWidth : 450,
